@@ -20,18 +20,32 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install
+      - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build Astro
         run: npm run build
 
+      - name: Add server to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.HETZNER_HOST }} >> ~/.ssh/known_hosts
+
       - name: Deploy via rsync
-        uses: easingthemes/ssh-deploy@v5
+        uses: easingthemes/ssh-deploy@main
         with:
           SSH_PRIVATE_KEY: ${{ secrets.HETZNER_SSH_KEY }}
           REMOTE_HOST: ${{ secrets.HETZNER_HOST }}
           REMOTE_USER: ${{ secrets.HETZNER_USER }}
           SOURCE: dist/
           TARGET: /var/www/plint/
-          ARGS: -rlptDvz --delete --chown=caddy:caddy
+          ARGS: -rlptDvz --delete
+
+      - name: Chown to caddy on server
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.HETZNER_HOST }}
+          username: ${{ secrets.HETZNER_USER }}
+          key: ${{ secrets.HETZNER_SSH_KEY }}
+          command_timeout: 1m
+          script: chown -R caddy:caddy /var/www/plint
