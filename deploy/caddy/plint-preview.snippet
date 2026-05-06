@@ -1,0 +1,27 @@
+# Plint preview server — port 8081, basic auth, plain HTTP.
+# Add this as a top-level block in /etc/caddy/Caddyfile, alongside the existing site blocks.
+#
+# After editing the Caddyfile:
+#   sudo caddy validate --config /etc/caddy/Caddyfile
+#   sudo systemctl reload caddy
+
+:8081 {
+    # Generate the bcrypt hash on the server with:
+    #   caddy hash-password
+    # Then paste it where shown below.
+    basic_auth {
+        plint <BCRYPT_HASH>
+    }
+
+    root * /var/www/plint
+    file_server
+    encode gzip
+    log {
+        output file /var/log/caddy/plint-preview.log
+    }
+
+    # SPA-like fallback isn't needed (static directory build), but guard 404s gracefully:
+    handle_errors {
+        respond "{err.status_code} {err.status_text}" {err.status_code}
+    }
+}

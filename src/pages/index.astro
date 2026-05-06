@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Plint — Pioneering the next era of localisation" noindex={true}>
+  <section class="hero section-dark">
+    <div class="container">
+      <p class="eyebrow">Localisation evolved</p>
+      <h1>Pioneering the next era of localisation</h1>
+      <p class="lede">
+        There's a global appetite for local content. With well over 20 years of expertise in the localisation industry, we know how to master the art of localisation in this new era — and we are proud to be a trusted partner to some of the world's leading entertainment studios, streaming platforms, and content creators.
+      </p>
+    </div>
+  </section>
+
+  <section class="placeholder container">
+    <p><em>Pixel-perfect rebuild in progress. This is a scaffolding placeholder so the preview pipeline is wired end-to-end. Real content lands as Phase 2 fills in.</em></p>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 6rem 0 4rem;
+  }
+  .eyebrow {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+  }
+  .lede {
+    max-width: 60ch;
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    line-height: 1.5;
+    opacity: 0.8;
+    margin-top: 2rem;
+  }
+  .placeholder {
+    padding: 4rem 0;
+    color: var(--color-muted);
+  }
+</style>

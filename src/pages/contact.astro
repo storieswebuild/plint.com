@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Contact — Plint">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Get in touch</h1>
+    </div>
+  </section>
+  <section class="container form-wrap">
+    <form aria-disabled="true" onsubmit="return false">
+      <label>Choose department
+        <select disabled>
+          <option>New business and sales</option>
+          <option>Press</option>
+          <option>Production</option>
+          <option>People</option>
+        </select>
+      </label>
+      <label>Name <input type="text" disabled /></label>
+      <label>Email <input type="email" disabled /></label>
+      <label>Message <textarea rows="5" disabled></textarea></label>
+      <button type="button" disabled>Submit (coming soon)</button>
+      <p class="note">The contact form is wired up as a placeholder for now. The submit handler is intentionally disabled and will be implemented after the visual rebuild lands.</p>
+    </form>
+  </section>
+</Base>
+
+<style>
+  .page-hero {
+    min-height: 70vh;
+    padding: 6rem 0 3rem;
+    display: flex;
+    align-items: center;
+    background: #f3f3f3;
+  }
+  .form-wrap { padding: 4rem 0; max-width: 640px; }
+  form { display: grid; gap: 1.25rem; }
+  label { display: grid; gap: 0.5rem; font-size: 0.95rem; }
+  input, select, textarea {
+    font: inherit;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    background: #fff;
+  }
+  button {
+    padding: 0.85rem 1.5rem;
+    background: var(--color-fg);
+    color: #fff;
+    border: 0;
+    cursor: not-allowed;
+    opacity: 0.6;
+    font: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .note { color: var(--color-muted); font-size: 0.85rem; }
+</style>

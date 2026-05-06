@@ -1,0 +1,37 @@
+name: Deploy preview to Hetzner
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-preview
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy via rsync
+        uses: easingthemes/ssh-deploy@v5
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.HETZNER_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.HETZNER_HOST }}
+          REMOTE_USER: ${{ secrets.HETZNER_USER }}
+          SOURCE: dist/
+          TARGET: /var/www/plint/
+          ARGS: -rlptDvz --delete --chown=caddy:caddy

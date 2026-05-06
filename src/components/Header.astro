@@ -1,0 +1,56 @@
+---
+const links = [
+  { href: '/solutions/', label: 'Solutions' },
+  { href: '/about/', label: 'About' },
+  { href: '/news/', label: 'News' },
+  { href: '/contact/', label: 'Contact' },
+];
+const here = Astro.url.pathname;
+---
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Plint home">Plint</a>
+  <nav>
+    <ul>
+      {links.map(({ href, label }) => (
+        <li class:list={[{ active: here.startsWith(href) }]}>
+          <a href={href}>{label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    z-index: 10;
+  }
+  .brand {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: inherit;
+  }
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    font-size: 0.95rem;
+    color: inherit;
+    padding-bottom: 0.25rem;
+  }
+  nav li.active a {
+    color: var(--color-accent);
+    border-bottom: 1px solid var(--color-accent);
+  }
+</style>

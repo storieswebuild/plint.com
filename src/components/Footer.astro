@@ -1,0 +1,37 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container">
+    <p>© {year} Plint</p>
+    <ul>
+      <li><a href="/privacy-policy/">Privacy</a></li>
+      <li><a href="/termsconditions/">Terms</a></li>
+      <li><a href="/whistle-blowing-policy/">Whistleblowing</a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-bg-dark);
+    color: var(--color-fg-on-dark);
+    padding: 3rem 0;
+    margin-top: 6rem;
+  }
+  .site-footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .site-footer ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+  }
+</style>

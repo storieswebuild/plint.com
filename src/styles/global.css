@@ -1,0 +1,52 @@
+/* Design tokens — placeholders. Will be tightened against the live site once Typekit is wired up. */
+:root {
+  --color-bg: #ffffff;
+  --color-bg-dark: #000000;
+  --color-fg: #0a0a0a;
+  --color-fg-on-dark: #ffffff;
+  --color-accent: #ff6a00;
+  --color-muted: #6b6b6b;
+
+  --font-display: 'gmx2kkg-display', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'gmx2kkg-body', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --container-max: 1440px;
+  --container-pad: 2rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-body);
+  color: var(--color-fg);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img, video { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+  margin: 0 0 0.5em;
+}
+h1 { font-size: clamp(2.5rem, 6vw, 6rem); }
+h2 { font-size: clamp(2rem, 4vw, 4rem); }
+h3 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
+
+p { margin: 0 0 1em; line-height: 1.5; }
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.section-dark {
+  background: var(--color-bg-dark);
+  color: var(--color-fg-on-dark);
+}
