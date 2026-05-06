@@ -1,4 +1,6 @@
 ---
+import Logo from './Logo.astro';
+
 const links = [
   { href: '/solutions/', label: 'Solutions' },
   { href: '/about/', label: 'About' },
@@ -8,7 +10,9 @@ const links = [
 const here = Astro.url.pathname;
 ---
 <header class="site-header">
-  <a class="brand" href="/" aria-label="Plint home">Plint</a>
+  <a class="brand" href="/" aria-label="Plint — home">
+    <Logo height={28} />
+  </a>
   <nav>
     <ul>
       {links.map(({ href, label }) => (
@@ -29,14 +33,19 @@ const here = Astro.url.pathname;
     justify-content: space-between;
     padding: 1.5rem 2rem;
     z-index: 10;
+    /* Default to white header — most pages open with a dark hero. Pages with a
+       light hero (e.g. /news/) override this via [data-header-tone="dark"]. */
+    color: var(--color-fg-on-dark);
+  }
+  :global([data-header-tone="dark"]) .site-header {
+    color: var(--color-fg);
   }
   .brand {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    display: inline-flex;
+    align-items: center;
     color: inherit;
   }
+  .brand:hover { text-decoration: none; }
   nav ul {
     display: flex;
     gap: 2rem;

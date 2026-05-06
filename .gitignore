@@ -8,3 +8,7 @@ dist/
 *.log
 .vscode/
 .idea/
+
+# Raw scrape cache from old-plint.hemsida.eu — re-fetchable via scripts/scrape-assets.mjs.
+# Curated assets we keep should be moved into public/images/, public/fonts/ etc.
+.scraped/

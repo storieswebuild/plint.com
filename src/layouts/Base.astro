@@ -7,9 +7,15 @@ interface Props {
   title: string;
   description?: string;
   noindex?: boolean;
+  headerTone?: 'light' | 'dark';
 }
 
-const { title, description = 'Plint — pioneering the next era of localisation.', noindex = true } = Astro.props;
+const {
+  title,
+  description = 'Plint — pioneering the next era of localisation.',
+  noindex = true,
+  headerTone = 'light',
+} = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 <!doctype html>
@@ -29,7 +35,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <!-- Adobe Typekit slot — replace with the real kit URL once provided -->
     <!-- <link rel="stylesheet" href="https://use.typekit.net/<KIT_ID>.css" /> -->
   </head>
-  <body>
+  <body data-header-tone={headerTone}>
     <Header />
     <main>
       <slot />
