@@ -7,8 +7,8 @@
   --color-accent: #ff6a00;
   --color-muted: #6b6b6b;
 
-  --font-display: 'gmx2kkg-display', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-body: 'gmx2kkg-body', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'neue-haas-grotesk-display-pr', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'neue-haas-grotesk-text-pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   --container-max: 1440px;
   --container-pad: 2rem;

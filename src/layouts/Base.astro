@@ -32,8 +32,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <!-- Adobe Typekit slot — replace with the real kit URL once provided -->
-    <!-- <link rel="stylesheet" href="https://use.typekit.net/<KIT_ID>.css" /> -->
+    <link rel="preconnect" href="https://use.typekit.net" />
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin />
+    <link rel="stylesheet" href="https://use.typekit.net/hkg8oak.css" />
   </head>
   <body data-header-tone={headerTone}>
     <Header />

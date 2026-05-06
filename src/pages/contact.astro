@@ -1,40 +1,115 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const departments = [
+  { name: 'New business and sales', email: 'sales@plint.com' },
+  { name: 'Press', email: 'press@plint.com' },
+  { name: 'Production', email: 'production@plint.com' },
+  { name: 'People', email: 'people@plint.com' },
+];
 ---
 <Base title="Contact — Plint">
   <section class="page-hero">
-    <div class="container">
+    <div class="page-hero-img">
+      <img src="/images/site/contact-bg.jpg" alt="" />
+    </div>
+    <div class="page-hero-text container">
       <h1>Get in touch</h1>
     </div>
   </section>
-  <section class="container form-wrap">
+
+  <section class="dept container">
+    <p class="eyebrow">Choose department</p>
+    <ul>
+      {departments.map((d) => (
+        <li>
+          <a href={`mailto:${d.email}`}>
+            <span class="name">{d.name}</span>
+            <span class="email">{d.email}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="form-wrap container">
+    <h2>Send us a message</h2>
     <form aria-disabled="true" onsubmit="return false">
-      <label>Choose department
-        <select disabled>
-          <option>New business and sales</option>
-          <option>Press</option>
-          <option>Production</option>
-          <option>People</option>
-        </select>
-      </label>
       <label>Name <input type="text" disabled /></label>
       <label>Email <input type="email" disabled /></label>
+      <label>Department
+        <select disabled>
+          {departments.map((d) => <option>{d.name}</option>)}
+        </select>
+      </label>
       <label>Message <textarea rows="5" disabled></textarea></label>
       <button type="button" disabled>Submit (coming soon)</button>
-      <p class="note">The contact form is wired up as a placeholder for now. The submit handler is intentionally disabled and will be implemented after the visual rebuild lands.</p>
+      <p class="note">The contact form is wired up as a placeholder. Use the department emails above to reach us in the meantime.</p>
     </form>
   </section>
 </Base>
 
 <style>
   .page-hero {
+    position: relative;
     min-height: 70vh;
-    padding: 6rem 0 3rem;
     display: flex;
-    align-items: center;
-    background: #f3f3f3;
+    align-items: flex-end;
+    color: var(--color-fg-on-dark);
+    overflow: hidden;
+    background: #000;
   }
-  .form-wrap { padding: 4rem 0; max-width: 640px; }
+  .page-hero-img { position: absolute; inset: 0; }
+  .page-hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .page-hero-text {
+    position: relative;
+    z-index: 1;
+    padding: 0 2rem 4rem;
+    width: 100%;
+  }
+  .page-hero h1 {
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 1;
+    margin: 0;
+  }
+  .eyebrow {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-muted);
+    margin: 0 0 1.5rem;
+  }
+  .dept {
+    padding: 6rem 0 3rem;
+  }
+  .dept ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid #ddd;
+  }
+  .dept li { border-bottom: 1px solid #ddd; }
+  .dept a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    color: inherit;
+    transition: color 0.2s ease;
+  }
+  .dept a:hover { color: var(--color-accent); text-decoration: none; }
+  .dept .name {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .dept .email { font-size: 1rem; color: var(--color-muted); }
+
+  .form-wrap { padding: 3rem 0 8rem; max-width: 640px; }
+  .form-wrap h2 {
+    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    margin: 0 0 2rem;
+  }
   form { display: grid; gap: 1.25rem; }
   label { display: grid; gap: 0.5rem; font-size: 0.95rem; }
   input, select, textarea {
@@ -55,5 +130,5 @@ import Base from '../layouts/Base.astro';
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
-  .note { color: var(--color-muted); font-size: 0.85rem; }
+  .note { color: var(--color-muted); font-size: 0.85rem; margin-top: 0.5rem; }
 </style>

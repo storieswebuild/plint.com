@@ -1,14 +1,42 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+
+const posts = (await getCollection('news'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+function fmtDate(d: Date): string {
+  return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+}
 ---
 <Base title="News — Plint" headerTone="dark">
   <section class="page-hero">
     <div class="container">
-      <h1>All news, Events, Stories, Press</h1>
+      <h1>All news, Events,<br/>Stories, Press</h1>
     </div>
   </section>
+
   <section class="container">
-    <p><em>Pixel-perfect rebuild in progress. The 10 existing posts will be migrated from WordPress as Astro content collections.</em></p>
+    <ul class="post-grid">
+      {posts.map((p) => (
+        <li class="post-card">
+          <a href={`/news/${p.data.slug}/`}>
+            {p.data.hero && (
+              <div class="thumb">
+                <img src={p.data.hero} alt="" loading="lazy" />
+              </div>
+            )}
+            <div class="meta">
+              <span class="cat">{p.data.category}</span>
+              <span class="dot">·</span>
+              <time datetime={p.data.date.toISOString()}>{fmtDate(p.data.date)}</time>
+            </div>
+            <h2>{p.data.title}</h2>
+            {p.data.excerpt && <p class="excerpt">{p.data.excerpt}</p>}
+          </a>
+        </li>
+      ))}
+    </ul>
   </section>
 </Base>
 
@@ -21,5 +49,63 @@ import Base from '../../layouts/Base.astro';
     padding: 6rem 0 3rem;
     text-align: right;
   }
-  .page-hero h1 { max-width: 14ch; }
+  .page-hero h1 {
+    max-width: 14ch;
+    line-height: 1;
+  }
+  .post-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 4rem 2.5rem;
+    padding-bottom: 6rem;
+  }
+  .post-card a {
+    display: block;
+    color: inherit;
+  }
+  .post-card a:hover { text-decoration: none; }
+  .post-card a:hover h2 { color: var(--color-accent); }
+  .thumb {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: #f3f3f3;
+    margin-bottom: 1.25rem;
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .post-card a:hover .thumb img { transform: scale(1.03); }
+  .meta {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-muted);
+    margin-bottom: 0.75rem;
+  }
+  .meta .cat { color: var(--color-accent); }
+  h2 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    line-height: 1.1;
+    margin: 0 0 0.75rem;
+    transition: color 0.2s ease;
+  }
+  .excerpt {
+    color: var(--color-muted);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 </style>
