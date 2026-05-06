@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import ClientLogos from '../components/ClientLogos.astro';
 
 const latestNews = (await getCollection('news'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -28,18 +29,34 @@ const latestNews = (await getCollection('news'))
     </div>
   </section>
 
+  <ClientLogos />
+
   {latestNews && (
-    <section class="latest-news container">
-      <p class="eyebrow">News</p>
-      <a class="news-card" href={`/news/${latestNews.data.slug}/`}>
-        <div class="news-text">
+    <section class="news-feature">
+      <div class="news-bg">
+        <img src="/images/site/news-feature-bg.jpg" alt="" />
+      </div>
+      <div class="news-text container">
+        <p class="eyebrow">News</p>
+        <a href={`/news/${latestNews.data.slug}/`} class="news-link">
           <h2>{latestNews.data.title}</h2>
-          <p>Click here to read our latest press release</p>
-        </div>
-        {latestNews.data.hero && <img src={latestNews.data.hero} alt="" />}
-      </a>
+          <span class="cta">Click here to read our latest press release <span aria-hidden>→</span></span>
+        </a>
+      </div>
     </section>
   )}
+
+  <section class="career section-dark">
+    <div class="container career-grid">
+      <div>
+        <h2>Are you an experienced linguist, looking to take the next step in your freelancing career?</h2>
+      </div>
+      <div class="career-cta">
+        <p class="cta-eyebrow">Right now we are looking for FR-CA linguists.</p>
+        <a href="/contact/" class="apply">Apply now <span aria-hidden>→</span></a>
+      </div>
+    </div>
+  </section>
 </Base>
 
 <style>
@@ -52,22 +69,9 @@ const latestNews = (await getCollection('news'))
     overflow: hidden;
     background: #000;
   }
-  .hero-img {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-  .hero-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .hero-text {
-    position: relative;
-    z-index: 1;
-    padding: 0 2rem 4rem;
-    width: 100%;
-  }
+  .hero-img { position: absolute; inset: 0; z-index: 0; }
+  .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-text { position: relative; z-index: 1; padding: 0 2rem 4rem; width: 100%; }
   .eyebrow {
     font-size: 0.95rem;
     text-transform: uppercase;
@@ -81,47 +85,87 @@ const latestNews = (await getCollection('news'))
     line-height: 1;
     margin: 0;
   }
-  .intro {
-    padding: 8rem 0;
-  }
-  .intro .container {
-    max-width: 50ch;
-    margin: 0 auto;
-  }
+
+  .intro { padding: 8rem 0; }
+  .intro .container { max-width: 50ch; margin: 0 auto; }
   .intro p {
     font-size: clamp(1.125rem, 1.4vw, 1.4rem);
     line-height: 1.5;
     margin-bottom: 1.5em;
   }
-  .latest-news {
-    padding: 6rem 0;
+
+  .news-feature {
+    position: relative;
+    color: var(--color-fg-on-dark);
+    overflow: hidden;
+    background: #000;
+    min-height: 60vh;
+    display: flex;
+    align-items: stretch;
   }
-  .latest-news .eyebrow { color: var(--color-accent); margin-bottom: 2rem; }
-  .news-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    color: inherit;
+  .news-bg { position: absolute; inset: 0; }
+  .news-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .news-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 100%);
   }
-  .news-card:hover { text-decoration: none; }
-  .news-card:hover h2 { color: var(--color-accent); }
-  .news-card img {
+  .news-text {
+    position: relative;
+    z-index: 1;
+    align-self: stretch;
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 2rem;
   }
-  .news-card h2 {
+  .news-text .eyebrow { margin: 0; }
+  .news-link {
+    color: inherit;
+    display: block;
+    margin-top: auto;
+  }
+  .news-link:hover { text-decoration: none; }
+  .news-link h2 {
     font-size: clamp(1.75rem, 3vw, 2.75rem);
     line-height: 1.1;
-    margin: 0 0 1rem;
-    transition: color 0.2s ease;
+    margin: 0 0 1.5rem;
+    max-width: 18ch;
   }
-  .news-card .news-text p {
+  .cta {
+    display: inline-block;
+    font-size: 0.95rem;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.25rem;
+  }
+
+  .career { padding: 8rem 0; }
+  .career-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  .career h2 {
+    font-size: clamp(1.75rem, 3vw, 3rem);
+    line-height: 1.15;
+    margin: 0;
+    max-width: 16ch;
+  }
+  .cta-eyebrow {
+    font-size: 1.125rem;
+    margin: 0 0 1.5rem;
     color: var(--color-muted);
+  }
+  .apply {
     font-size: 1rem;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.25rem;
+    color: inherit;
   }
   @media (max-width: 768px) {
-    .news-card { grid-template-columns: 1fr; gap: 1.5rem; }
+    .career-grid { grid-template-columns: 1fr; }
   }
 </style>

@@ -8,14 +8,10 @@ hero: "/images/news/per-naucler-co-founder-head-of-business-development.png"
 excerpt: "Per Nauclér, Co-founder & Head of Business Development Keeping our mojo Text by François Lambrecht Photography by Ines Sebalj and Jonas Jacobsson If Plint is today the company it always wanted to"
 ---
 Per Nauclér, Co-founder & Head of Business Development
-			
-				
-						
-				
 
 ## Keeping our mojo
 
-Text by François Lambrecht  
+Text by François Lambrecht
 
 Photography by Ines Sebalj and Jonas Jacobsson
 
@@ -27,7 +23,7 @@ Though his commanding omnipresence on our floors has become more discreet in the
 
 And until there’s an Academy award for Outstanding Performance in front of a Webcam – a new category definitely worth considering if this pandemic lasts much longer, it’s for his unique ability in seeing the big picture and directing our story at Plint that he’s been nominated among the 9 finalists of the EY Entrepreneur of the Year Award for Western Sweden.
 
-* Gothenburg, Sweden. Photography: Jonas Jacobsson
+![](https://old-plint.hemsida.eu/wp-content/uploads/2020/11/jonas-jacobsson-gbg-scaled.jpg) Gothenburg, Sweden. Photography: Jonas Jacobsson
 
 Since the company’s creation in 2002, it’s been a swift ride that gained even more pace a couple of years ago when Plint entered a partnership with a global streaming giant. Quite a feat when you know that they were only at the beginning of their international expansion journey, and which led to the opening of the first Plint office outside of Sweden, in L.A. What could have been considered as the company’s peak achievement would eventually be the start of a much wider expansion all across the board: under Per’s leadership, Plint kept piling up significant successes that strengthened our position.
 
@@ -49,83 +45,20 @@ Judging by Plint’s latest homeruns, we’re confident that, with his eye for s
 
 If you want more info or need our services, don’t hesitate to get in touch with us:
 
-Per Nauclér  
+Per Nauclér
 
-Head of Business Development & Sales  
+Head of Business Development & Sales
 
-[per.naucler@plint.com](mailto:per.naucler@plint.com)  
+[per.naucler@plint.com](mailto:per.naucler@plint.com)
 
 [+46 70 339 43 06](tel:+46703394306)
 
-Maria D’Alessandro  
+Maria D’Alessandro
 
-Head of Client Services  
+Head of Client Services
 
-[maria.dalessandro@plint.com](mailto:maria.dalessandro@plint.com)  
+[maria.dalessandro@plint.com](mailto:maria.dalessandro@plint.com)
 
-[+44 (0)203 744 6912](tel:+442037446912)  
+[+44 (0)203 744 6912](tel:+442037446912)
 
 [+44 (0)7570 534 544](tel:+447570534544)
-
-							
-
-																																				
-				
-				
-## Related articles
-
-			
-			
-	
-	
-	
-					
-		
-																		
-					
-						
-							[](https://old-plint.hemsida.eu/coffee-break-with-asa-zimmerman/)
-							
-																				
-#### Coffee break with Åsa Zimmerman
-
-							
-								
-								24/03/2025
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-															
-					
-						
-							[](https://old-plint.hemsida.eu/disa-lagergard/)
-							
-																				
-#### Disa Lagergård
-
-							
-								
-								03/05/2023
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-															
-					
-						
-							[](https://old-plint.hemsida.eu/this-is-jonas/)
-							
-																				
-#### This is Jonas
-
-							
-								
-								31/05/2020
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-					<!-- swiper-wrapper -->
-				***	<!-- fusion-carousel -->
-<!-- related-posts -->

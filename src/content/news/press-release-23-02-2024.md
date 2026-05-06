@@ -21,71 +21,8 @@ As Åsa assumes the role of CEO, Örjan Serner, who has served as Acting CEO sin
 
 For more information, please contact:
 
-Frida Ström  
+Frida Ström
 
-Brand and Communications  
+Brand and Communications
 
 [frida.strom@plint.com](mailto:frida.strom@plint.com)
-
-							
-
-																																				
-				
-				
-## Related articles
-
-			
-			
-	
-	
-	
-					
-		
-																		
-					
-						
-							[*](https://old-plint.hemsida.eu/press-release-05-12-2025/)
-							
-																				
-#### Press release 05/12/2025
-
-							
-								
-								05/12/2025
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-															
-					
-						
-							[](https://old-plint.hemsida.eu/press-release-10-09-2025/)
-							
-																				
-#### Press release 10/09/2025
-
-							
-								
-								10/09/2025
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-															
-					
-						
-							[](https://old-plint.hemsida.eu/plint-winner-of-red-dot-award/)
-							
-																				
-#### Plint Winner of Red Dot Award
-
-							
-								
-								16/11/2023
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-					<!-- swiper-wrapper -->
-				***	<!-- fusion-carousel -->
-<!-- related-posts -->

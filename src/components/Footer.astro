@@ -1,13 +1,41 @@
 ---
-const year = new Date().getFullYear();
+const navLinks = [
+  { href: '/news/', label: 'News' },
+  { href: '/career/', label: 'Career' },
+  { href: '/privacy-policy/', label: 'Privacy Policy' },
+  { href: '/whistle-blowing-policy/', label: 'Whistle-blowing Policy' },
+  { href: '/contact/', label: 'Contact' },
+];
+
+const badges = [
+  { src: '/images/badges/linkedin.svg', alt: 'LinkedIn', href: 'https://www.linkedin.com/company/plint' },
+  { src: '/images/badges/iso-27001.png', alt: 'ISO 27001 certified', href: '#' },
+  { src: '/images/badges/tpn.png', alt: 'TPN gold member', href: '#' },
+];
 ---
 <footer class="site-footer">
-  <div class="container">
-    <p>© {year} Plint</p>
-    <ul>
-      <li><a href="/privacy-policy/">Privacy</a></li>
-      <li><a href="/termsconditions/">Terms</a></li>
-      <li><a href="/whistle-blowing-policy/">Whistleblowing</a></li>
+  <div class="container footer-grid">
+    <address>
+      <strong>Headquarters</strong>
+      <span>Kaserntorget 6</span>
+      <span>SE-411 18 Göteborg</span>
+      <span>Sweden</span>
+    </address>
+
+    <ul class="footer-nav">
+      {navLinks.map(({ href, label }) => (
+        <li><a href={href}>{label}</a></li>
+      ))}
+    </ul>
+
+    <ul class="footer-badges">
+      {badges.map(({ src, alt, href }) => (
+        <li>
+          <a href={href} aria-label={alt} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener' : undefined}>
+            <img src={src} alt={alt} loading="lazy" />
+          </a>
+        </li>
+      ))}
     </ul>
   </div>
 </footer>
@@ -16,22 +44,57 @@ const year = new Date().getFullYear();
   .site-footer {
     background: var(--color-bg-dark);
     color: var(--color-fg-on-dark);
-    padding: 3rem 0;
-    margin-top: 6rem;
+    padding: 5rem 0 3rem;
+    margin-top: 0;
   }
-  .site-footer .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
   }
-  .site-footer ul {
+  address {
+    font-style: normal;
+    line-height: 1.6;
     display: flex;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 0.05em;
+  }
+  address strong {
+    font-weight: 400;
+    margin-bottom: 0.25em;
+  }
+  .footer-nav, .footer-badges {
     list-style: none;
     margin: 0;
     padding: 0;
-    font-size: 0.9rem;
+  }
+  .footer-nav { line-height: 1.85; }
+  .footer-nav a {
+    color: inherit;
+    transition: color 0.2s ease;
+  }
+  .footer-nav a:hover {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .footer-badges {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .footer-badges img {
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+  }
+  .footer-badges li:first-child img {
+    /* LinkedIn icon scrape is dark; invert for dark footer */
+    filter: brightness(0) invert(1);
+    height: 32px;
+  }
+  @media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 </style>

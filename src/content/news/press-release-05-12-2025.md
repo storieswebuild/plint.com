@@ -26,71 +26,8 @@ The initial productisation is traditional subtitles for all major languages but 
 Mark will be based in Los Angeles and will continue to work with other companies in addition to Plint.
 
 **For more information please contact: ****
-Per Nauclér  
+Per Nauclér
 
-Chief Commercial Officer  
+Chief Commercial Officer
 
 [per.naucler@plint.com**](mailto:per.naucler@plint.com)
-
-							
-
-																																				
-				
-				
-## Related articles
-
-			
-			
-	
-	
-	
-					
-		
-																		
-					
-						
-							[*](https://old-plint.hemsida.eu/press-release-10-09-2025/)
-							
-																				
-#### Press release 10/09/2025
-
-							
-								
-								10/09/2025
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-															
-					
-						
-							[](https://old-plint.hemsida.eu/press-release-23-02-2024/)
-							
-																				
-#### Press release 23/02/2024
-
-							
-								
-								23/02/2024
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-															
-					
-						
-							[](https://old-plint.hemsida.eu/plint-winner-of-red-dot-award/)
-							
-																				
-#### Plint Winner of Red Dot Award
-
-							
-								
-								16/11/2023
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-					<!-- swiper-wrapper -->
-				***	<!-- fusion-carousel -->
-<!-- related-posts -->

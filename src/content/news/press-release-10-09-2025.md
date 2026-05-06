@@ -11,7 +11,7 @@ excerpt: "Press release 10/09/2025 Plint Launches SUB – AI-Driven Subtitling a
 
 ### Plint has officially launched Plint SUB, a next-generation subtitling solution that combines the power of AI with a fully automated SaaS delivery model.
 
-With 93% MQM-verified accuracy, subtitles delivered up to ten times faster, and cost savings of 66%, Plint SUB redefines what global media localization can be. Where many solutions still replicate manual workflows under the banner of AI, Plint SUB takes a different path. Purpose-built as an automated, scalable platform, it enables media companies to integrate subtitling directly into their media supply chain through a comprehensive API. 
+With 93% MQM-verified accuracy, subtitles delivered up to ten times faster, and cost savings of 66%, Plint SUB redefines what global media localization can be. Where many solutions still replicate manual workflows under the banner of AI, Plint SUB takes a different path. Purpose-built as an automated, scalable platform, it enables media companies to integrate subtitling directly into their media supply chain through a comprehensive API.
 
 Backed by Plint’s ISO 27001 certified Information Security Management System and TPN Gold recognition, it delivers industry-standard files securely and seamlessly—without the bottlenecks of coordination-heavy or review-heavy processes.
 
@@ -21,71 +21,8 @@ With minimal post-editing, professional segmentation, and natural, idiomatic loc
 
 **For more information, please contact:**
 
-**Per Nauclér**  
+**Per Nauclér**
 
-Co-founder and CCO  
+Co-founder and CCO
 
 [per.naucler@plint.com](mailto:per.naucler@plint.com)
-
-							
-
-																																				
-				
-				
-## Related articles
-
-			
-			
-	
-	
-	
-					
-		
-																		
-					
-						
-							[*](https://old-plint.hemsida.eu/press-release-05-12-2025/)
-							
-																				
-#### Press release 05/12/2025
-
-							
-								
-								05/12/2025
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-															
-					
-						
-							[](https://old-plint.hemsida.eu/press-release-23-02-2024/)
-							
-																				
-#### Press release 23/02/2024
-
-							
-								
-								23/02/2024
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-															
-					
-						
-							[](https://old-plint.hemsida.eu/plint-winner-of-red-dot-award/)
-							
-																				
-#### Plint Winner of Red Dot Award
-
-							
-								
-								16/11/2023
-
-															<!-- fusion-carousel-meta -->
-											<!-- fusion-carousel-item-wrapper -->
-				
-					<!-- swiper-wrapper -->
-				***	<!-- fusion-carousel -->
-<!-- related-posts -->

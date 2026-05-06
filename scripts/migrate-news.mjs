@@ -130,10 +130,16 @@ async function processOne(slug) {
   const article = html.match(/<article[^>]*>([\s\S]*?)<\/article>/);
   if (article) {
     bodyHtml = article[1];
+    // Cut everything from the related-posts carousel onwards — Avada appends a
+    // "Related posts" widget inside <article>, but it's not part of the post body.
+    const relatedIdx = bodyHtml.search(/<!--\s*related-posts\s*-->|class="[^"]*related-posts/i);
+    if (relatedIdx > -1) bodyHtml = bodyHtml.slice(0, relatedIdx);
     // Drop the "post-header" / hero block that duplicates the title.
     bodyHtml = bodyHtml.replace(/<div[^>]*class="[^"]*(?:post-header|fusion-page-title|entry-header|post-thumbnail)[^"]*"[\s\S]*?<\/div>\s*<\/div>/gi, '');
     // Drop date/category meta strips
     bodyHtml = bodyHtml.replace(/<div[^>]*class="[^"]*(?:fusion-meta-info|post-meta|entry-meta)[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
+    // Drop sharingbox (Avada share-buttons widget)
+    bodyHtml = bodyHtml.replace(/<div[^>]*class="[^"]*(?:sharing-box|fusion-sharing-box|fusion-social-networks)[^"]*"[\s\S]*?<\/div>/gi, '');
   }
   let body = htmlToMarkdown(bodyHtml);
   // Kill the recurring Avada placeholder text and post-content noise
@@ -149,6 +155,10 @@ async function processOne(slug) {
   body = body.replace(/\(https?:\/\/old-plint\.hemsida\.eu\/(?:category|tag|author)\/[^)]+\)/g, '(#)');
   // Drop trailing tag link list (lines that are only of the form "[#Foo](...)")
   body = body.replace(/^(?:\s*\[#[^\]]+\]\([^)]*\)[ ,]*)+\s*$/gm, '');
+  // Drop orphan trailing tag fragments (e.g. "<section" left over from a half-cut block)
+  body = body.replace(/<\/?[a-z][^>\n]{0,200}$/i, '');
+  // Trim very long whitespace lines
+  body = body.replace(/[ \t]+$/gm, '');
   // Collapse whitespace
   body = body.replace(/\n{3,}/g, '\n\n').trim();
 
